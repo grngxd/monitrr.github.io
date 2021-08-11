@@ -10,9 +10,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow-x: hidden;  
 }
 body{
-    color: #fff;
+    color: #000;
 }
 #landing-noscroll{
     width: 100vw;
@@ -22,7 +23,7 @@ body{
 
 #landing-img{
       transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
-  display: block;
+  display: inherit;
   max-width: 100%;
         max-height: 100%;
         margin: 0 auto;
@@ -32,5 +33,28 @@ body{
 #landing-img:hover{
     -ms-transform: scale(1.0); /* IE 9 */
   -webkit-transform: scale(1.0); /* Safari 3-8 */
-  transform: scale(1.0));
+  transform: scale(1.0);
+  cursor: pointer;
+}
+
+#content{
+    width: 100vw;
+    height: 100vh;
+} 
+
+h1 {
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #000;
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+p {
+    padding-left: 10px;
+    padding-top: 5px;
+    color: #292929;
+    display: block;
+    word-wrap: unset; 
 }
