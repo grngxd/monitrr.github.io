@@ -38,5 +38,5 @@ code {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-monitrr-100 to-monitrr-200 rounded-full;
+  @apply bg-gradient-to-b from-monitrr-100 to-monitrr-200;
 }
