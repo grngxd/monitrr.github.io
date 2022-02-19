@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter } from "react-router-dom";
-import Navbar from './components/Navbar';
-import Content from './components/Content';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NotFound from './NotFound';
+import Home from './Home';
 
 function App() {
   return (
     <div className="app">
-      <Navbar/>
-      <Content/>
-      <Projects/>
-      <Footer/>
+      <Router basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />}/>
+      </Routes>
+    </Router>
     </div>
   );
 }
