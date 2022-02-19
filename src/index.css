@@ -8,11 +8,6 @@
   @apply text-transparent bg-gradient-to-r from-monitrr-100 to-monitrr-200 bg-clip-text;
 }
 
-.moni-gradient-reverse{
-  @apply text-transparent bg-gradient-to-l from-monitrr-100 to-monitrr-200 bg-clip-text;
-}
-
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
