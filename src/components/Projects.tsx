@@ -10,7 +10,7 @@ function Projects() {
           <div className='grid grid-cols-3 gap-8'>
             <Project name='Socialo' src='./projects/Socialo.png' href='https://github.com/code123841/Socialo'/>
             <Project name='Wizzer Todo' src='./projects/Todo.png' href='https://wizzer-todo.netlify.app/'/>
-            <Project name='Priority Client' src='./projects/Priority.png' href='https://dsc.gg/priorityclient'/>
+            <Project name='moni.is-a.dev' src='./projects/Portfolio.png' href='/'/>
           </div>
       </div>
     </div>
