@@ -5,20 +5,20 @@ import { CircularProgress } from '@mui/material';
 
 
 const query = `
-    {
-      user(username: "monitrr") {
-        publication {
-          posts{
-            title
-            brief
-            coverImage
-            totalReactions
-            slug
-            dateAdded
-          }
-        }
+{
+  user(username: "monitrr") {
+    publication {
+      posts{
+        title
+        brief
+        coverImage
+        totalReactions
+        slug
+        dateAdded
       }
     }
+  }
+}
   `;
 
 class Blog extends React.Component {
@@ -52,7 +52,7 @@ class Blog extends React.Component {
         if (this.state.loading) return <div className='w-full h-[calc(100vh-6rem)] flex items-center justify-center'><CircularProgress className='text-monitrr-200 hover:text-monitrr-100 transition-all duration-300' color='inherit' variant='indeterminate'/></div>;
 
         return (
-          <div className='mt-16 p-16 hidden justify-center items-center flex-col md:flex'>
+          <div className=' mt-16 p-16 hidden justify-center items-center flex-col md:flex'>
               {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
               <h1 className='mt-10 moni-gradient font-medium transition-all hover:font-bold duration-150 cursor-pointer mb-1 drop-shadow-lg shadow-white text-2xl'>// Blog</h1>
                 <div className="grid grid-cols-2 gap-4">
