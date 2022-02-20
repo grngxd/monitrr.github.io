@@ -3,7 +3,7 @@ import Socials from './Socials'
 
 function Content() {
   return (
-    <div className='p-10 pt-[calc(50vh-10rem)] md:text-center text-left flex flex-col self-center align-middle h-[calc(100vh-48px)]'>
+    <div className='p-10 pt-[calc(50vh-10rem)] md:text-center text-left flex flex-col self-center align-middle h-[calc(100vh+2rem)]'>
         <h1 className='font-bold text-2xl moni-gradient'>
           monitrr
         </h1>
