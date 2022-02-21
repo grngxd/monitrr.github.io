@@ -5,7 +5,6 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
-import Status from './components/Status';
 
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
       <Navbar/>
       <Content/>
       <Contact/>
-      <Status/>
       <Projects/>  
       <Blog/>
       <Footer/>
