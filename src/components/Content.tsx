@@ -10,7 +10,6 @@ function Content() {
           monitrr
         </h1>
         {/* <p className='font-light'>front end developer, game developer, amateur pianist</p> */}
-
         <Prescence/>
         
           <div className='md:flex flex-col hidden items-center mt-5'>
@@ -30,27 +29,35 @@ function Prescence(){
 	});
 
   if(lanyard.isValidating){
-    return (<CircularProgress className='justify-center w-full self-center scale-[0.1] text-monitrr-200 hover:text-monitrr-100 transition-all duration-300' color='inherit' variant='indeterminate'/>)
-  }else if(lanyard.data?.data.activities[1]){
-    if(lanyard.data?.data.active_on_discord_desktop){
-      return (<span className='font-light'><span className='text-neutral-600 font-bold'>Playing: </span>{lanyard.data?.data.activities[1].name} on desktop.</span>)
-    }
-    else if(lanyard.data?.data.active_on_discord_desktop){
-      return (<span className='font-light'><span className='text-neutral-600 font-bold'>Playing: </span>{lanyard.data?.data.activities[1].name} on mobile.</span>)
-    }
-    else{
-      return (<span className='font-light'><span className='text-neutral-600 font-bold'>Playing: </span>{lanyard.data?.data.activities[1].name} on something</span>)
-    }
-  }else if(lanyard.data?.data.activities[0]){
-    return (
-      <div>
-    <p className='font-light'>front end developer, game developer, amateur pianist</p>
-    <span className='font-light text-sm'>{lanyard.data?.data.activities[0].emoji?.name} {lanyard.data?.data.activities[0].state}</span>
-    </div>
-    )
+    return <div className='w-full flex items-center justify-center'><CircularProgress className='text-monitrr-200 hover:text-monitrr-100 transition-all duration-300' color='inherit' variant='indeterminate'/></div>;
   }else{
-    return ( <p className='font-light'>front end developer, game developer, amateur pianist</p> )
+    if(typeof lanyard.data?.data.activities[0] !== 'undefined' && typeof lanyard.data?.data.activities[1] === 'undefined'){
+      if(typeof lanyard.data?.data.activities[0].emoji?.name !== 'undefined'){
+        return (
+        <div>
+        <p className='font-light'>front end developer, game developer, amateur pianist</p>
+        <p className='font-light text-sm'>{lanyard.data?.data.activities[0].emoji?.name} {lanyard.data?.data.activities[0].state}</p>
+        </div>
+        )
+      }else if(typeof lanyard.data?.data.activities[0].state !== 'undefined'){
+        return (
+        <div>
+        <p className='font-light'>front end developer, game developer, amateur pianist</p>
+        <p className='font-light text-sm text-sm'>{lanyard.data?.data.activities[0].state}</p>
+        </div>
+        )
+        }
+    
+    }else if(typeof lanyard.data?.data.activities[1] !== 'undefined'){
+      return(
+        <div><span className='text-neutral-600 font-bold'>PLAYING: </span> <span className='font-light'>{lanyard.data?.data.activities[1].name}</span></div>
+      )
+    }else{
+      return <p className='font-light'>front end developer, game developer, amateur pianist</p>
+    }
   }
+
+  return null;
 }
 
 export default Content
