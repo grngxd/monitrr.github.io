@@ -41,6 +41,13 @@ function Prescence(){
     else{
       return (<span className='font-light'><span className='text-neutral-600 font-bold'>Playing: </span>{lanyard.data?.data.activities[1].name} on something</span>)
     }
+  }else if(lanyard.data?.data.activities[0]){
+    return (
+      <div>
+    <p className='font-light'>front end developer, game developer, amateur pianist</p>
+    <span className='font-light text-sm'>{lanyard.data?.data.activities[0].emoji?.name} {lanyard.data?.data.activities[0].state}</span>
+    </div>
+    )
   }else{
     return ( <p className='font-light'>front end developer, game developer, amateur pianist</p> )
   }
