@@ -43,15 +43,25 @@ function Prescence(){
         return (
         <div>
         <p className='font-light'>front end developer, game developer, amateur pianist</p>
-        <p className='font-light text-sm text-sm'>{lanyard.data?.data.activities[0].state}</p>
+        <p className='font-light text-sm'>{lanyard.data?.data.activities[0].state}</p>
         </div>
         )
         }
     
     }else if(typeof lanyard.data?.data.activities[1] !== 'undefined'){
-      return(
-        <div><span className='text-neutral-600 font-bold'>PLAYING: </span> <span className='font-light'>{lanyard.data?.data.activities[1].name}</span></div>
-      )
+      if(lanyard.data?.data.active_on_discord_desktop){
+        return(
+          <div><span className='text-neutral-600 font-bold'>PLAYING: </span> <span className='font-light'>{lanyard.data?.data.activities[1].name} on desktop.</span></div>
+        )
+      }else if(lanyard.data?.data.active_on_discord_mobile){
+        return(
+          <div><span className='text-neutral-600 font-bold'>PLAYING: </span> <span className='font-light'>{lanyard.data?.data.activities[1].name} on mobile.</span></div>
+        )
+      }else{
+        return(
+          <div><span className='text-neutral-600 font-bold'>PLAYING: </span> <span className='font-light'>{lanyard.data?.data.activities[1].name}.</span></div>
+        )
+      }
     }else{
       return <p className='font-light'>front end developer, game developer, amateur pianist</p>
     }
