@@ -43,7 +43,7 @@ function Prescence(){
         return (
         <div>
         <p className='font-light'>front end developer, game developer, amateur pianist</p>
-        <p className='font-light text-sm'>{lanyard.data?.data.activities[0].state}</p>
+        <p className='font-light text-sm'>{lanyard.data?.data.activities[0].name}</p>
         </div>
         )
         }
