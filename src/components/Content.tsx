@@ -31,37 +31,20 @@ function Prescence(){
   if(lanyard.isValidating){
     return <div className='w-full flex items-center justify-center'><CircularProgress className='text-monitrr-200 hover:text-monitrr-100 transition-all duration-300' color='inherit' variant='indeterminate'/></div>;
   }else{
-    if(typeof lanyard.data?.data.activities[0] !== 'undefined' && typeof lanyard.data?.data.activities[1] === 'undefined'){
-      if(typeof lanyard.data?.data.activities[0].emoji?.name !== 'undefined'){
-        return (
-        <div>
-        <p className='font-light'>front end developer, game developer, amateur pianist</p>
-        <p className='font-light text-sm'>{lanyard.data?.data.activities[0].emoji?.name} {lanyard.data?.data.activities[0].state}</p>
-        </div>
-        )
-      }else if(typeof lanyard.data?.data.activities[0].state !== 'undefined'){
-        return (
-        <div>
-        <p className='font-light'>front end developer, game developer, amateur pianist</p>
-        <p className='font-light text-sm'>{lanyard.data?.data.activities[0].name}</p>
-        </div>
-        )
-        }
-    
-    }else if(typeof lanyard.data?.data.activities[1] !== 'undefined'){
-      if(lanyard.data?.data.active_on_discord_desktop){
-        return(
-          <div><span className='text-neutral-600 font-bold'>PLAYING: </span> <span className='font-light'>{lanyard.data?.data.activities[1].name} on desktop.</span></div>
-        )
-      }else if(lanyard.data?.data.active_on_discord_mobile){
-        return(
-          <div><span className='text-neutral-600 font-bold'>PLAYING: </span> <span className='font-light'>{lanyard.data?.data.activities[1].name} on mobile.</span></div>
-        )
+    if(typeof lanyard.data?.data.activities !== 'undefined'){
+    for(var i in lanyard.data?.data.activities){
+      if(lanyard.data?.data.activities[i].type === 4){
+        return (<div>
+          <p className='font-light'>front end developer, game developer, amateur pianist</p>
+        <p className='font-light text-neutral-600 text-sm'>{lanyard.data?.data.activities[i].emoji?.name} {lanyard.data?.data.activities[i].state}</p>
+        </div>)
       }else{
-        return(
-          <div><span className='text-neutral-600 font-bold'>PLAYING: </span> <span className='font-light'>{lanyard.data?.data.activities[1].name}.</span></div>
-        )
+        return (<div>
+          <p className='font-light'>front end developer, game developer, amateur pianist</p>
+        <p className='font-light text-neutral-600 text-sm'><span className='font-bold text-sm'>PLAYING: </span>{lanyard.data?.data.activities[i].name}</p>
+        </div>)
       }
+    }
     }else{
       return <p className='font-light'>front end developer, game developer, amateur pianist</p>
     }

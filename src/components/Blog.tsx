@@ -40,11 +40,7 @@ class Blog extends React.Component {
             body: JSON.stringify({ query }),
         })
         const parsed = await response.json();
-
-        console.log(parsed.data.user.publication.posts);
         this.setState({ posts: parsed.data.user.publication.posts, loading: false });
-
-
     };
 
     render() {
