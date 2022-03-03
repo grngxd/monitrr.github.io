@@ -50,7 +50,7 @@ function Prescence(){
     }
   }
 
-  return null;
+  return <p className='font-light'>front end developer, game developer, amateur pianist</p>;
 }
 
 export default Content
