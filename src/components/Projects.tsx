@@ -3,6 +3,7 @@ import Project from "./ProjectsProject"
 
 function Projects() {
   return (
+    
     <div className='md:flex hidden'>
       <div className='mt-10 mb-[-1rem] p-10 pt-6 md:text-center flex flex-col items-center h-auto'>
           {/*eslint-disable-next-line react/jsx-no-comment-textnodes*/}
