@@ -8,9 +8,11 @@ function Projects() {
           {/*eslint-disable-next-line react/jsx-no-comment-textnodes*/}
           <h1 className='mt-10 moni-gradient font-medium transition-all hover:font-bold duration-150 cursor-pointer mb-10 drop-shadow-lg shadow-white text-2xl'>// Projects</h1>
           <div className='grid grid-cols-3 gap-8'>
-            <Project name='Socialo' src='./projects/Socialo.png' href='https://github.com/code123841/Socialo'/>
+            <Project name='Portfolio' src='./projects/Portfolio.png' href='/'/>
+            <Project name='cross.place' src='./projects/Crossplace.png' href='https://cross.place'/>
+            <Project name='Socialo' src='./projects/Socialo.png' href='https://github.com/monitrr/Socialo'/>
             <Project name='Wizzer Todo' src='./projects/Todo.png' href='https://wizzer-todo.netlify.app/'/>
-            <Project name='moni.is-a.dev' src='./projects/Portfolio.png' href='/'/>
+            <Project name='Easy UI' src='./projects/EasyUiDev.png' href='https://www.easyui.dev/'/>
           </div>
       </div>
     </div>
